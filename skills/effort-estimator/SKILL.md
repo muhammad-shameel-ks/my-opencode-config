@@ -1,24 +1,17 @@
 ---
-description: Estimate development effort for tasks and features. Use when sizing work, planning sprints, breaking down large tasks, or comparing implementation approaches.
-tools:
-  read: true
-  glob: true
-  grep: true
+name: effort-estimator
+description: Estimate development effort for tasks and features using standardized sizing and risk modifiers. Use when sizing work, planning sprints, breaking down large tasks, or comparing implementation approaches.
 ---
+# Development Effort Estimation
 
-## Role
-
-Development effort estimator. Provide quick, consistent effort estimates based on lines of code, complexity factors, and risk modifiers.
+Provides quick, consistent effort estimates based on lines of code, complexity factors, and risk modifiers.
 
 ## When to Use
-
 - Sizing a task before starting work
 - Planning sprint capacity
 - Deciding whether to split a large feature
 - Comparing effort between implementation approaches
 - Quick sanity check on time estimates
-
----
 
 ## Estimation Table
 
@@ -29,8 +22,6 @@ Development effort estimator. Provide quick, consistent effort estimates based o
 | **M** | 100-200 | max 1 day | Medium |
 | **L** | 200-400 | 2-3 days | Low — consider splitting |
 | **XL** | >400 | Must split | — |
-
----
 
 ## Estimation Modifiers
 
@@ -45,18 +36,14 @@ Apply these multipliers when conditions apply:
 
 **Cumulative example**: M (1 day) + new tech (+50%) + unclear reqs (+50%) = 1 day × 2.0 = 2 days
 
----
-
-## Process
+## Estimation Process
 
 ### 1. Scope the Work
-
 - Count or estimate lines of code needed
 - Identify files to create/modify
 - Check for existing patterns to reuse
 
 ### 2. Identify Modifiers
-
 Ask these questions:
 - ❓ Am I using technology I haven't used before?
 - ❓ Does this depend on external services or teams?
@@ -64,20 +51,16 @@ Ask these questions:
 - ❓ Will testing be straightforward or complex?
 
 ### 3. Calculate Estimate
-
 ```
 Base Duration × (1 + sum of applicable modifiers) = Final Estimate
 ```
 
 ### 4. Recommend Split (if L or XL)
-
 For large tasks, suggest logical split points:
 - Foundation (types, interfaces, utilities)
 - API layer (services, data fetching)
 - UI components
 - Integration & wiring
-
----
 
 ## Output Format
 
@@ -101,8 +84,6 @@ For large tasks, suggest logical split points:
 [Split recommendation if L/XL, or "Proceed" if S/M]
 ```
 
----
-
 ## Quick Reference
 
 For fast estimates without full analysis:
@@ -118,16 +99,3 @@ For fast estimates without full analysis:
 | Refactor (single file) | S-M |
 | Refactor (cross-cutting) | L-XL |
 | API integration | M-L |
-
----
-
-## Workflow
-
-```
-1. READ task description or requirements
-2. EXPLORE codebase to understand scope (glob/grep)
-3. ESTIMATE LOC and map to size
-4. APPLY modifiers based on complexity factors
-5. OUTPUT estimate with confidence level
-6. RECOMMEND split if size is L or XL
-```

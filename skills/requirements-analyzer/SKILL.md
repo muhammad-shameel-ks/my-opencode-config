@@ -1,28 +1,17 @@
 ---
-description: Analyze feature requirements before implementation. Use when starting new features, reviewing specs, or breaking down tasks.
-tools:
-  read: true
-  glob: true
-  grep: true
-  task: true
-  skill: true
-  webfetch: true
+name: requirements-analyzer
+description: Analyze feature requirements for clarity, scope, technical feasibility, and risk before implementation begins. Use when starting new features, reviewing specs, or breaking down tasks.
 ---
-
-## Role
+# Requirements Analysis Guidelines
 
 Requirements analyst and technical planner. Evaluate feature requirements for clarity, scope, technical feasibility, and risk before implementation begins.
 
 ## When to Use
-
 - Starting a new feature implementation
 - Reviewing requirements or specs before coding
 - Breaking down large tasks into smaller PRs
-
 - Identifying blockers, dependencies, and risks
 - Validating acceptance criteria are testable
-
----
 
 ## Analysis Depth
 
@@ -34,9 +23,7 @@ Select depth based on change scope:
 | **Standard** | Features, medium changes (50-200 LOC) | All sections, Output: Standard |
 | **Deep** | Large features, architectural changes (>200 LOC) | All sections + Risk Matrix, Output: Full |
 
----
-
-## Process
+## Analysis Process
 
 ### 1. Requirements Discovery
 
@@ -81,8 +68,6 @@ Ensure each requirement has:
 - Identify validation requirements
 - Consider: What if the user does something unexpected?
 
----
-
 ### 2. Technical Analysis
 
 #### 2.1 Change Classification
@@ -126,8 +111,6 @@ Ensure each requirement has:
 - Are there external dependencies (APIs, libraries, teams)?
 - Cross-reference with other requirements if available
 
----
-
 ### 3. Risk Assessment (Standard/Deep only)
 
 #### 3.1 Risk Identification
@@ -156,8 +139,6 @@ Watch for these patterns:
 - ⚠️ Unclear boundaries between this feature and related features
 
 **Mitigation**: Document scope explicitly. Defer nice-to-haves to follow-up PRs.
-
----
 
 ### 4. Planning
 
@@ -198,8 +179,6 @@ Watch for these patterns:
 - Note conventions to follow
 - Flag any technical debt to address
 
----
-
 ### 5. Definition of Done
 
 Before marking analysis complete, verify:
@@ -212,8 +191,6 @@ Before marking analysis complete, verify:
 
 - [ ] PR split strategy defined (if needed)
 - [ ] Blockers and dependencies identified
-
----
 
 ## Required Output Format
 
@@ -240,40 +217,36 @@ Before marking analysis complete, verify:
 - [External dependencies or integrations]
 ```
 
----
+## Workflow Guidelines
 
-## Workflow
+1. **DETERMINE DEPTH**
+   - Quick (<50 LOC) / Standard (50-200) / Deep (>200 or architectural)
 
-```
-1. DETERMINE DEPTH
-   └─ Quick (<50 LOC) / Standard (50-200) / Deep (>200 or architectural)
+2. **DISCOVER REQUIREMENTS**
+   - Read provided requirements
+   - Ask discovery questions (1.2)
+   - Validate acceptance criteria (1.3)
 
-2. DISCOVER REQUIREMENTS
-   ├─ Read provided requirements
-   ├─ Ask discovery questions (1.2)
-   └─ Validate acceptance criteria (1.3)
+3. **EXPLORE CODEBASE & DOCS**
+   - Use `glob` to find related files
+   - Use `grep` to find patterns and usages
+   - Use `webfetch` to pull external API docs, library references
+   - Load relevant `skills` for best practices
 
-3. EXPLORE CODEBASE & DOCS
-   ├─ Use `glob` to find related files
-   ├─ Use `grep` to find patterns and usages
-   ├─ Use `webfetch` to pull external API docs, library references
-   └─ Load relevant `skills` for best practices
+4. **ANALYZE TECHNICAL FEASIBILITY**
+   - Classify change type
+   - Map data flow
+   - Identify reusable code
+   - Check NFRs
 
-4. ANALYZE TECHNICAL FEASIBILITY
-   ├─ Classify change type
-   ├─ Map data flow
-   ├─ Identify reusable code
-   └─ Check NFRs
+5. **ASSESS RISK** (Standard/Deep)
+   - Identify risks
+   - Create mitigation strategies
+   - Watch for scope creep
 
-5. ASSESS RISK (Standard/Deep)
-   ├─ Identify risks
-   ├─ Create mitigation strategies
-   └─ Watch for scope creep
+6. **PLAN**
+   - Recommend PR split if needed
+   - Identify required skills/agents
 
-6. PLAN
-   ├─ Recommend PR split if needed
-   └─ Identify required skills/agents
-
-7. GENERATE OUTPUT
-   └─ Use appropriate format for depth level
-```
+7. **GENERATE OUTPUT**
+   - Use appropriate format for depth level
