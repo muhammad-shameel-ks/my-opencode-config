@@ -10,7 +10,11 @@
       }
     }
   },
-  "plugin": ["opencode-gemini-auth@latest", "opencode-antigravity-auth@latest"],
+  "plugin": [
+    "opencode-gemini-auth@latest",
+    "opencode-antigravity-auth@latest",
+    "@franlol/opencode-md-table-formatter@latest"
+  ],
   "model": "alibaba/coder-model",
   "provider": {
     "google": {
