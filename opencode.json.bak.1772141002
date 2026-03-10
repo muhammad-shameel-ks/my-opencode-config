@@ -1,5 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "theme": "system",
   "mcp": {
     "context7": {
       "type": "remote",
@@ -8,10 +9,9 @@
         "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
       }
     },
-    "exa": {
+    "Exa-Search": {
       "type": "remote",
-      "url": "https://mcp.exa.ai/mcp",
-      "enabled": true
+      "url": "https://mcp.exa.ai/mcp"
     }
   },
   "plugin": [
@@ -19,12 +19,9 @@
     "opencode-antigravity-auth@latest",
     "@franlol/opencode-md-table-formatter@latest"
   ],
-  "model": "alibaba/coder-model",
+  "model": "alibaba/qwen3.5-plus-02-15",
   "provider": {
     "google": {
-      "options": {
-        "baseURL": "https://generativelanguage.googleapis.com"
-      },
       "models": {
         "antigravity-gemini-3-pro": {
           "name": "Gemini 3 Pro (Antigravity)",
@@ -188,18 +185,6 @@
             "input": ["text", "image", "pdf"],
             "output": ["text"]
           }
-        }
-      }
-    },
-    "nvidia": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "Nvidia",
-      "options": {
-        "baseURL": "https://integrate.api.nvidia.com/v1"
-      },
-      "models": {
-        "stepfun-ai/step-3.5-flash": {
-          "name": "Step-3.5 Flash"
         }
       }
     }
