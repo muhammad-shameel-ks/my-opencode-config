@@ -15,8 +15,7 @@
     }
   },
   "plugin": [
-    "opencode-gemini-auth@latest",
-    "opencode-antigravity-auth@latest",
+    "opencode-antigravity-auth@beta",
     "@franlol/opencode-md-table-formatter@latest"
   ],
   "model": "alibaba/coder-model",
