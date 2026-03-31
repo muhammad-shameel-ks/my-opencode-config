@@ -17,7 +17,7 @@
 - First-time setup
 - Version upgrades
 
-**Rule**: If it's not in `/home/mallubeast/.config/opencode/context/`, use ExternalScout.
+**Rule**: If it's not in `.opencode/context/`, use ExternalScout.
 
 ---
 
@@ -124,7 +124,7 @@ task(
 | Aspect | ContextScout | ExternalScout |
 |--------|--------------|---------------|
 | **Searches** | Internal project files | External documentation |
-| **Location** | `/home/mallubeast/.config/opencode/context/` | Internet (Context7, docs) |
+| **Location** | `.opencode/context/` | Internet (Context7, docs) |
 | **Returns** | Project standards | Library APIs |
 | **Use for** | "How we do things here" | "How this library works" |
 | **Speed** | Fast (local) | Slower (network) |

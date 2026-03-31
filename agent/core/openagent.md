@@ -45,11 +45,11 @@ WHY THIS MATTERS:
 - Delegation without workflows/task-delegation-basics.md → Wrong context passed to subagents
 
 Required context files:
-- Code tasks → /home/mallubeast/.config/opencode/context/core/standards/code-quality.md
-- Docs tasks → /home/mallubeast/.config/opencode/context/core/standards/documentation.md  
-- Tests tasks → /home/mallubeast/.config/opencode/context/core/standards/test-coverage.md
-- Review tasks → /home/mallubeast/.config/opencode/context/core/workflows/code-review.md
-- Delegation → /home/mallubeast/.config/opencode/context/core/workflows/task-delegation-basics.md
+- Code tasks → .opencode/context/core/standards/code-quality.md
+- Docs tasks → .opencode/context/core/standards/documentation.md  
+- Tests tasks → .opencode/context/core/standards/test-coverage.md
+- Review tasks → .opencode/context/core/workflows/code-review.md
+- Delegation → .opencode/context/core/workflows/task-delegation-basics.md
 
 CONSEQUENCE OF SKIPPING: Work that doesn't match project standards = wasted effort + rework
 </critical_context_requirement>
@@ -143,7 +143,7 @@ task(
     
     Edge case - "Context loading vs minimal overhead":
     - @critical_context_requirement (Tier 1) ALWAYS overrides minimal overhead (Tier 3)
-    - Context files (/home/mallubeast/.config/opencode/context/core/*.md) MANDATORY, not optional
+    - Context files (.opencode/context/core/*.md) MANDATORY, not optional
     - Session files (.tmp/sessions/*) created only when needed
     - Ex: "Write docs" → MUST load standards/documentation.md (Tier 1 override)
     - Ex: "Write docs" → Skip ctx for efficiency (VIOLATION)
@@ -244,11 +244,11 @@ task(
       
       1. Classify task: docs|code|tests|delegate|review|patterns|bash-only
       2. Map to context file:
-         - code (write/edit code) → Read /home/mallubeast/.config/opencode/context/core/standards/code-quality.md NOW
-         - docs (write/edit docs) → Read /home/mallubeast/.config/opencode/context/core/standards/documentation.md NOW
-         - tests (write/edit tests) → Read /home/mallubeast/.config/opencode/context/core/standards/test-coverage.md NOW
-         - review (code review) → Read /home/mallubeast/.config/opencode/context/core/workflows/code-review.md NOW
-         - delegate (using task tool) → Read /home/mallubeast/.config/opencode/context/core/workflows/task-delegation-basics.md NOW
+         - code (write/edit code) → Read .opencode/context/core/standards/code-quality.md NOW
+         - docs (write/edit docs) → Read .opencode/context/core/standards/documentation.md NOW
+         - tests (write/edit tests) → Read .opencode/context/core/standards/test-coverage.md NOW
+         - review (code review) → Read .opencode/context/core/workflows/code-review.md NOW
+         - delegate (using task tool) → Read .opencode/context/core/workflows/task-delegation-basics.md NOW
          - bash-only → No context needed, proceed to 3.2
          
          NOTE: Load all files discovered by ContextScout in Stage 1.5 if not already loaded.
@@ -258,11 +258,11 @@ task(
          IF direct: Use Read tool to load context file, then proceed to 3.2
       
       <automatic_loading>
-        IF code task → /home/mallubeast/.config/opencode/context/core/standards/code-quality.md (MANDATORY)
-        IF docs task → /home/mallubeast/.config/opencode/context/core/standards/documentation.md (MANDATORY)
-        IF tests task → /home/mallubeast/.config/opencode/context/core/standards/test-coverage.md (MANDATORY)
-        IF review task → /home/mallubeast/.config/opencode/context/core/workflows/code-review.md (MANDATORY)
-        IF delegation → /home/mallubeast/.config/opencode/context/core/workflows/task-delegation-basics.md (MANDATORY)
+        IF code task → .opencode/context/core/standards/code-quality.md (MANDATORY)
+        IF docs task → .opencode/context/core/standards/documentation.md (MANDATORY)
+        IF tests task → .opencode/context/core/standards/test-coverage.md (MANDATORY)
+        IF review task → .opencode/context/core/workflows/code-review.md (MANDATORY)
+        IF delegation → .opencode/context/core/workflows/task-delegation-basics.md (MANDATORY)
         IF bash-only → No context required
         
         WHEN DELEGATING TO SUBAGENTS:
@@ -505,7 +505,7 @@ task(
            subagent_type="TestEngineer",  // or CodeReviewer, DocWriter, BuildAgent
            description="Brief description of task",
            prompt="Context to load:
-                   - /home/mallubeast/.config/opencode/context/core/standards/test-coverage.md
+                   - .opencode/context/core/standards/test-coverage.md
                    - [other relevant context files]
                    
                    Task: [specific task description]
@@ -530,7 +530,7 @@ task(
            subagent_type="TestEngineer",
            description="Write tests for auth module",
            prompt="Context to load:
-                   - /home/mallubeast/.config/opencode/context/core/standards/test-coverage.md
+                   - .opencode/context/core/standards/test-coverage.md
                    
                    Task: Write comprehensive tests for auth module
                    
@@ -556,8 +556,8 @@ task(
            subagent_type="CodeReviewer",
            description="Review parallel execution implementation",
            prompt="Context to load:
-                   - /home/mallubeast/.config/opencode/context/core/workflows/code-review.md
-                   - /home/mallubeast/.config/opencode/context/core/standards/code-quality.md
+                   - .opencode/context/core/workflows/code-review.md
+                   - .opencode/context/core/standards/code-quality.md
                    
                    Task: Review parallel test execution implementation
                    
@@ -582,7 +582,7 @@ task(
            subagent_type="DocWriter",
            description="Document parallel execution feature",
            prompt="Context to load:
-                   - /home/mallubeast/.config/opencode/context/core/standards/documentation.md
+                   - .opencode/context/core/standards/documentation.md
                    
                    Task: Document parallel test execution feature
                    
@@ -611,7 +611,7 @@ task(
      </route>
    </specialized_routing>
   
-  <process ref="/home/mallubeast/.config/opencode/context/core/workflows/task-delegation-basics.md">Full delegation template & process</process>
+  <process ref=".opencode/context/core/workflows/task-delegation-basics.md">Full delegation template & process</process>
 </delegation_rules>
 
 <principles>
@@ -624,14 +624,14 @@ task(
 </principles>
 
 <static_context>
-  Context index: /home/mallubeast/.config/opencode/context/navigation.md
+  Context index: .opencode/context/navigation.md
   
   Load index when discovering contexts by keywords. For common tasks:
-  - Code tasks → /home/mallubeast/.config/opencode/context/core/standards/code-quality.md
-  - Docs tasks → /home/mallubeast/.config/opencode/context/core/standards/documentation.md  
-  - Tests tasks → /home/mallubeast/.config/opencode/context/core/standards/test-coverage.md
-  - Review tasks → /home/mallubeast/.config/opencode/context/core/workflows/code-review.md
-  - Delegation → /home/mallubeast/.config/opencode/context/core/workflows/task-delegation-basics.md
+  - Code tasks → .opencode/context/core/standards/code-quality.md
+  - Docs tasks → .opencode/context/core/standards/documentation.md  
+  - Tests tasks → .opencode/context/core/standards/test-coverage.md
+  - Review tasks → .opencode/context/core/workflows/code-review.md
+  - Delegation → .opencode/context/core/workflows/task-delegation-basics.md
   
   Full index includes all contexts with triggers and dependencies.
   Context files loaded per @critical_context_requirement.

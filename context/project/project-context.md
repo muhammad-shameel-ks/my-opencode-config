@@ -68,7 +68,7 @@ You are [doing specific task].
 **Request:** $ARGUMENTS
 
 **Context Loaded:**
-@/home/mallubeast/.config/opencode/context/core/essential-patterns.md
+@.opencode/context/core/essential-patterns.md
 @[additional context files]
 
 Execute [task] now.

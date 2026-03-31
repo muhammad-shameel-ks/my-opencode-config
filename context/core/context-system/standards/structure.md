@@ -22,7 +22,7 @@
 </rule>
 
 ```
-/home/mallubeast/.config/opencode/context/{category}/
+.opencode/context/{category}/
 ├── navigation.md              # Navigation map (REQUIRED)
 ├── concepts/              # What it is
 │   └── {topic}.md

@@ -9,7 +9,7 @@
 ## Structure
 
 ```
-/home/mallubeast/.config/opencode/context/
+.opencode/context/
 ├── core/                   # Universal standards & workflows
 ├── openagents-repo/        # OpenAgents Control repository work
 ├── development/            # Software development (all stacks)

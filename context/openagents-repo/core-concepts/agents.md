@@ -232,7 +232,7 @@ Agents should load relevant context files based on task type:
 <!-- Context: standards/code | Priority: critical -->
 ```
 
-Loads: `/home/mallubeast/.config/opencode/context/core/standards/code-quality.md`
+Loads: `.opencode/context/core/standards/code-quality.md`
 
 ### Category Context
 
@@ -240,7 +240,7 @@ Loads: `/home/mallubeast/.config/opencode/context/core/standards/code-quality.md
 <!-- Context: development/react-patterns | Priority: high -->
 ```
 
-Loads: `/home/mallubeast/.config/opencode/context/ui/web/react-patterns.md`
+Loads: `.opencode/context/ui/web/react-patterns.md`
 
 ### Multiple Contexts
 

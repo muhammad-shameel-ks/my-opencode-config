@@ -336,7 +336,7 @@ find .opencode/agent -name "{agent-name}.md"
 find evals/agents -name "*.yaml"
 
 # Find context
-find /home/mallubeast/.config/opencode/context -name "*.md"
+find .opencode/context -name "*.md"
 
 # Find scripts
 find scripts -name "*.sh"

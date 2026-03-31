@@ -61,7 +61,7 @@
 ### 2. Choose Pattern
 - Use decision tree above
 - Consider future growth
-- Check existing patterns in `/home/mallubeast/.config/opencode/context/`
+- Check existing patterns in `.opencode/context/`
 
 ### 3. Create Directory Structure
 ```bash

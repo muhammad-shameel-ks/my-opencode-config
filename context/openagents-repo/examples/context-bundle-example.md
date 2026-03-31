@@ -18,28 +18,28 @@ Create a new data analyst agent for the OpenAgents Control repository. This agen
 ## Relevant Standards (Load These Before Starting)
 
 **Core Standards**:
-- `/home/mallubeast/.config/opencode/context/core/standards/code-quality.md` → Modular, functional code patterns
-- `/home/mallubeast/.config/opencode/context/core/standards/test-coverage.md` → Testing requirements and TDD
-- `/home/mallubeast/.config/opencode/context/core/standards/documentation.md` → Documentation standards
+- `.opencode/context/core/standards/code-quality.md` → Modular, functional code patterns
+- `.opencode/context/core/standards/test-coverage.md` → Testing requirements and TDD
+- `.opencode/context/core/standards/documentation.md` → Documentation standards
 
 **Core Workflows**:
-- `/home/mallubeast/.config/opencode/context/core/workflows/feature-breakdown.md` → Task breakdown methodology
+- `.opencode/context/core/workflows/feature-breakdown.md` → Task breakdown methodology
 
 ## Repository-Specific Context (Load These Before Starting)
 
 **Quick Start** (ALWAYS load first):
-- `/home/mallubeast/.config/opencode/context/openagents-repo/quick-start.md` → Repo orientation and common commands
+- `.opencode/context/openagents-repo/quick-start.md` → Repo orientation and common commands
 
 **Core Concepts** (Load based on task type):
-- `/home/mallubeast/.config/opencode/context/openagents-repo/core-concepts/agents.md` → How agents work
-- `/home/mallubeast/.config/opencode/context/openagents-repo/core-concepts/evals.md` → How testing works
-- `/home/mallubeast/.config/opencode/context/openagents-repo/core-concepts/registry.md` → How registry works
-- `/home/mallubeast/.config/opencode/context/openagents-repo/core-concepts/categories.md` → How organization works
+- `.opencode/context/openagents-repo/core-concepts/agents.md` → How agents work
+- `.opencode/context/openagents-repo/core-concepts/evals.md` → How testing works
+- `.opencode/context/openagents-repo/core-concepts/registry.md` → How registry works
+- `.opencode/context/openagents-repo/core-concepts/categories.md` → How organization works
 
 **Guides** (Load for specific workflows):
-- `/home/mallubeast/.config/opencode/context/openagents-repo/guides/adding-agent-basics.md` → Step-by-step agent creation
-- `/home/mallubeast/.config/opencode/context/openagents-repo/guides/testing-agent.md` → Testing workflow
-- `/home/mallubeast/.config/opencode/context/openagents-repo/guides/updating-registry.md` → Registry workflow
+- `.opencode/context/openagents-repo/guides/adding-agent-basics.md` → Step-by-step agent creation
+- `.opencode/context/openagents-repo/guides/testing-agent.md` → Testing workflow
+- `.opencode/context/openagents-repo/guides/updating-registry.md` → Registry workflow
 
 ## Key Requirements
 
@@ -92,7 +92,7 @@ Create a new data analyst agent for the OpenAgents Control repository. This agen
 
 **Modify**:
 - `registry.json` - Add data-analyst agent entry
-- `/home/mallubeast/.config/opencode/context/navigation.md` - Add data category context if needed
+- `.opencode/context/navigation.md` - Add data category context if needed
 
 ## Success Criteria
 

@@ -61,8 +61,8 @@ Validates consistency between:
     Scan agent files for context references:
     
     **Search patterns**:
-    - `/home/mallubeast/.config/opencode/context/` (direct path references)
-    - `@/home/mallubeast/.config/opencode/context/` (@ symbol references)
+    - `.opencode/context/` (direct path references)
+    - `@.opencode/context/` (@ symbol references)
     - `context:` (dependency declarations in frontmatter)
     
     **Locations**:
@@ -95,7 +95,7 @@ Validates consistency between:
     
     **Check existence**:
     ```bash
-    test -f /home/mallubeast/.config/opencode/context/core/standards/code-quality.md
+    test -f .opencode/context/core/standards/code-quality.md
     ```
     
     **Check registry**:
@@ -127,8 +127,8 @@ Validates consistency between:
     ### opencoder
     **Uses but not declared**:
     - context:core/standards/code (referenced 3 times)
-      - Line 64: "Code tasks → /home/mallubeast/.config/opencode/context/core/standards/code-quality.md (MANDATORY)"
-      - Line 170: "Read /home/mallubeast/.config/opencode/context/core/standards/code-quality.md NOW"
+      - Line 64: "Code tasks → .opencode/context/core/standards/code-quality.md (MANDATORY)"
+      - Line 170: "Read .opencode/context/core/standards/code-quality.md NOW"
       - Line 229: "NEVER execute write/edit without loading required context first"
     
     **Current dependencies**: subagent:task-manager, subagent:coder-agent
@@ -229,12 +229,12 @@ Validates consistency between:
 
 **Find direct path references**:
 ```bash
-grep -rn "\/home/mallubeast/.config/opencode/context/" .opencode/agent/ .opencode/command/
+grep -rn "\.opencode/context/" .opencode/agent/ .opencode/command/
 ```
 
 **Find @ references**:
 ```bash
-grep -rn "@\/home/mallubeast/.config/opencode/context/" .opencode/agent/ .opencode/command/
+grep -rn "@\.opencode/context/" .opencode/agent/ .opencode/command/
 ```
 
 **Find dependency declarations**:
@@ -245,8 +245,8 @@ grep -rn "^\s*-\s*context:" .opencode/agent/ .opencode/command/
 ### Path Normalization
 
 **Convert to dependency format**:
-- `/home/mallubeast/.config/opencode/context/core/standards/code-quality.md` → `context:core/standards/code`
-- `@/home/mallubeast/.config/opencode/context/openagents-repo/quick-start.md` → `context:openagents-repo/quick-start`
+- `.opencode/context/core/standards/code-quality.md` → `context:core/standards/code`
+- `@.opencode/context/openagents-repo/quick-start.md` → `context:openagents-repo/quick-start`
 - `context/core/standards/code` → `context:core/standards/code`
 
 **Rules**:
@@ -285,8 +285,8 @@ task(
        - .opencode/command/**/*.md
     
     2. Search for these patterns:
-       - "/home/mallubeast/.config/opencode/context/core/" (direct paths)
-       - "@/home/mallubeast/.config/opencode/context/" (@ references)
+       - ".opencode/context/core/" (direct paths)
+       - "@.opencode/context/" (@ references)
        - "context:" in frontmatter (dependency declarations)
     
     3. For each agent file found:
@@ -295,7 +295,7 @@ task(
        - Check registry.json for declared dependencies
        - Identify missing dependency declarations
     
-    4. For each context file in /home/mallubeast/.config/opencode/context/core/:
+    4. For each context file in .opencode/context/core/:
        - Count how many agents reference it
        - Check if it exists in registry.json
        - Identify unused context files
@@ -369,9 +369,9 @@ Run /check-context-deps --fix to auto-update frontmatter
 Analyzing agent: contextscout
 
 Context files referenced:
-✓ /home/mallubeast/.config/opencode/context/core/context-system.md (1 reference)
+✓ .opencode/context/core/context-system.md (1 reference)
   - Line 15: "Load: context:core/context-system"
-✓ /home/mallubeast/.config/opencode/context/core/context-system/standards/mvi.md (2 references)
+✓ .opencode/context/core/context-system/standards/mvi.md (2 references)
   - Line 16: "Load: context:core/context-system/standards/mvi"
   - Line 89: "MVI-aware prioritization"
 
@@ -430,4 +430,4 @@ Next: Run ./scripts/registry/auto-detect-components.sh to update registry
 
 - **Registry validation**: `./scripts/registry/validate-registry.sh`
 - **Auto-detect components**: `./scripts/registry/auto-detect-components.sh`
-- **Context guide**: `/home/mallubeast/.config/opencode/context/openagents-repo/quality/registry-dependencies.md`
+- **Context guide**: `.opencode/context/openagents-repo/quality/registry-dependencies.md`
