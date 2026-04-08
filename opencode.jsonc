@@ -7,14 +7,14 @@
   // ============================================================
   // Default Model
   // ============================================================
-  "model": "ollama/kimi-k2.5:cloud",
+  // "model": "ollama/kimi-k2.5:cloud",
 
   // ============================================================
   // Plugins
   // ============================================================
   "plugin": [
     "opencode-antigravity-auth@beta",
-    "@franlol/opencode-md-table-formatter@latest"
+    "@franlol/opencode-md-table-formatter@latest",
   ],
 
   // ============================================================
@@ -23,191 +23,190 @@
   "mcp": {
     "context7": {
       "headers": {
-        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}",
       },
       "type": "remote",
-      "url": "https://mcp.context7.com/mcp"
+      "url": "https://mcp.context7.com/mcp",
     },
     "exa": {
       "enabled": true,
       "type": "remote",
-      "url": "https://mcp.exa.ai/mcp"
-    }
+      "url": "https://mcp.exa.ai/mcp",
+    },
   },
 
   // ============================================================
   // Providers & Models
   // ============================================================
   "provider": {
-
     // ---------- Google (Antigravity + Gemini CLI) ----------
     "google": {
       "models": {
         "antigravity-claude-opus-4-6-thinking": {
           "limit": {
             "context": 200000,
-            "output": 64000
+            "output": 64000,
           },
           "modalities": {
             "input": ["text", "image", "pdf"],
-            "output": ["text"]
+            "output": ["text"],
           },
           "name": "Claude Opus 4.6 Thinking (Antigravity)",
           "variants": {
             "low": {
               "thinkingConfig": {
-                "thinkingBudget": 8192
-              }
+                "thinkingBudget": 8192,
+              },
             },
             "max": {
               "thinkingConfig": {
-                "thinkingBudget": 32768
-              }
-            }
-          }
+                "thinkingBudget": 32768,
+              },
+            },
+          },
         },
         "antigravity-claude-sonnet-4-6": {
           "limit": {
             "context": 200000,
-            "output": 64000
+            "output": 64000,
           },
           "modalities": {
             "input": ["text", "image", "pdf"],
-            "output": ["text"]
+            "output": ["text"],
           },
-          "name": "Claude Sonnet 4.6 (Antigravity)"
+          "name": "Claude Sonnet 4.6 (Antigravity)",
         },
         "antigravity-gemini-3-flash": {
           "limit": {
             "context": 1048576,
-            "output": 65536
+            "output": 65536,
           },
           "modalities": {
             "input": ["text", "image", "pdf"],
-            "output": ["text"]
+            "output": ["text"],
           },
           "name": "Gemini 3 Flash (Antigravity)",
           "variants": {
             "high": { "thinkingLevel": "high" },
             "low": { "thinkingLevel": "low" },
             "medium": { "thinkingLevel": "medium" },
-            "minimal": { "thinkingLevel": "minimal" }
-          }
+            "minimal": { "thinkingLevel": "minimal" },
+          },
         },
         "antigravity-gemini-3-pro": {
           "limit": {
             "context": 1048576,
-            "output": 65535
+            "output": 65535,
           },
           "modalities": {
             "input": ["text", "image", "pdf"],
-            "output": ["text"]
+            "output": ["text"],
           },
           "name": "Gemini 3 Pro (Antigravity)",
           "variants": {
             "high": { "thinkingLevel": "high" },
-            "low": { "thinkingLevel": "low" }
-          }
+            "low": { "thinkingLevel": "low" },
+          },
         },
         "antigravity-gemini-3.1-pro": {
           "limit": {
             "context": 1048576,
-            "output": 65535
+            "output": 65535,
           },
           "modalities": {
             "input": ["text", "image", "pdf"],
-            "output": ["text"]
+            "output": ["text"],
           },
           "name": "Gemini 3.1 Pro (Antigravity)",
           "variants": {
             "high": { "thinkingLevel": "high" },
-            "low": { "thinkingLevel": "low" }
-          }
+            "low": { "thinkingLevel": "low" },
+          },
         },
         "gemini-2.5-flash": {
           "limit": {
             "context": 1048576,
-            "output": 65536
+            "output": 65536,
           },
           "modalities": {
             "input": ["text", "image", "pdf"],
-            "output": ["text"]
+            "output": ["text"],
           },
-          "name": "Gemini 2.5 Flash (Gemini CLI)"
+          "name": "Gemini 2.5 Flash (Gemini CLI)",
         },
         "gemini-2.5-pro": {
           "limit": {
             "context": 1048576,
-            "output": 65536
+            "output": 65536,
           },
           "modalities": {
             "input": ["text", "image", "pdf"],
-            "output": ["text"]
+            "output": ["text"],
           },
-          "name": "Gemini 2.5 Pro (Gemini CLI)"
+          "name": "Gemini 2.5 Pro (Gemini CLI)",
         },
         "gemini-3-flash-preview": {
           "limit": {
             "context": 1048576,
-            "output": 65536
+            "output": 65536,
           },
           "modalities": {
             "input": ["text", "image", "pdf"],
-            "output": ["text"]
+            "output": ["text"],
           },
-          "name": "Gemini 3 Flash Preview (Gemini CLI)"
+          "name": "Gemini 3 Flash Preview (Gemini CLI)",
         },
         "gemini-3-pro-preview": {
           "limit": {
             "context": 1048576,
-            "output": 65535
+            "output": 65535,
           },
           "modalities": {
             "input": ["text", "image", "pdf"],
-            "output": ["text"]
+            "output": ["text"],
           },
-          "name": "Gemini 3 Pro Preview (Gemini CLI)"
+          "name": "Gemini 3 Pro Preview (Gemini CLI)",
         },
         "gemini-3.1-pro-preview": {
           "limit": {
             "context": 1048576,
-            "output": 65535
+            "output": 65535,
           },
           "modalities": {
             "input": ["text", "image", "pdf"],
-            "output": ["text"]
+            "output": ["text"],
           },
-          "name": "Gemini 3.1 Pro Preview (Gemini CLI)"
+          "name": "Gemini 3.1 Pro Preview (Gemini CLI)",
         },
         "gemini-3.1-pro-preview-customtools": {
           "limit": {
             "context": 1048576,
-            "output": 65535
+            "output": 65535,
           },
           "modalities": {
             "input": ["text", "image", "pdf"],
-            "output": ["text"]
+            "output": ["text"],
           },
-          "name": "Gemini 3.1 Pro Preview Custom Tools (Gemini CLI)"
-        }
+          "name": "Gemini 3.1 Pro Preview Custom Tools (Gemini CLI)",
+        },
       },
       "options": {
-        "baseURL": "https://generativelanguage.googleapis.com"
-      }
+        "baseURL": "https://generativelanguage.googleapis.com",
+      },
     },
 
     // ---------- Nvidia ----------
     "nvidia": {
       "models": {
         "stepfun-ai/step-3.5-flash": {
-          "name": "Step-3.5 Flash"
-        }
+          "name": "Step-3.5 Flash",
+        },
       },
       "name": "Nvidia",
       "npm": "@ai-sdk/openai-compatible",
       "options": {
-        "baseURL": "https://integrate.api.nvidia.com/v1"
-      }
+        "baseURL": "https://integrate.api.nvidia.com/v1",
+      },
     },
 
     // ---------- Ollama (Local) ----------
@@ -217,16 +216,16 @@
           "_launch": true,
           "limit": {
             "context": 262144,
-            "output": 262144
+            "output": 262144,
           },
-          "name": "kimi-k2.5:cloud"
-        }
+          "name": "kimi-k2.5:cloud",
+        },
       },
       "name": "Ollama",
       "npm": "@ai-sdk/openai-compatible",
       "options": {
-        "baseURL": "http://127.0.0.1:11434/v1"
-      }
-    }
-  }
+        "baseURL": "http://127.0.0.1:11434/v1",
+      },
+    },
+  },
 }
